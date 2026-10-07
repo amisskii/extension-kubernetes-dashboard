@@ -65,8 +65,10 @@ not be listed. Switch back to `test-namespace-lifecycle`; it must return.
 
 1. From **Access Control → Namespaces**, delete
    `test-namespace-lifecycle` and confirm the action.
-2. Verify the namespace disappears from the list and the selector.
-3. Return to **Compute → Pods**. The namespace and
+2. Verify the namespace disappears from the **Namespaces** list.
+3. Open **Dashboard** and verify its active namespace selector refreshes: it
+   must no longer show `test-namespace-lifecycle` or offer it as a choice.
+4. Return to **Compute → Pods**. The namespace and
    `test-namespace-consumer` must no longer be available.
 
 ## Expected evidence
@@ -75,3 +77,4 @@ not be listed. Switch back to `test-namespace-lifecycle`; it must return.
 - Namespace selection isolates the Pod list.
 - The ConfigMap-backed Pod log contains `namespace-isolated`.
 - Deleting the namespace cascades to the test ConfigMap and Pod.
+- Namespace selection refreshes after the namespace is deleted.
